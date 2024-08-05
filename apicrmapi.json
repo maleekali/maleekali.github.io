@@ -1,0 +1,1250 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "CRM AmarPishro Api",
+    "version": "v1"
+  },
+  "paths": {
+    "/api/Account/login": {
+      "post": {
+        "tags": [
+          "Account"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AuthRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AuthRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AuthRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuthResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuthResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuthResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Account/register": {
+      "post": {
+        "tags": [
+          "Account"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegistrationRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegistrationRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegistrationRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/RegistrationResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RegistrationResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RegistrationResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/CSB": {
+      "get": {
+        "tags": [
+          "CSB"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CSB_DTO"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CSB_DTO"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CSB_DTO"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/CSBER": {
+      "get": {
+        "tags": [
+          "CSBER"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CSB_ERDTO"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CSB_ERDTO"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CSB_ERDTO"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "CSBER"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateCSB_ERDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateCSB_ERDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateCSB_ERDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseCommandResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseCommandResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseCommandResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/CSBER/{id}": {
+      "get": {
+        "tags": [
+          "CSBER"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/CSB_ERDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CSB_ERDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CSB_ERDTO"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "CSBER"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/IOM": {
+      "get": {
+        "tags": [
+          "IOM"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/IOM_DTO"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/IOM_DTO"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/IOM_DTO"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/IOMER": {
+      "get": {
+        "tags": [
+          "IOMER"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/IOM_ERDTO"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/IOM_ERDTO"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/IOM_ERDTO"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "IOMER"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateIOM_ERDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateIOM_ERDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateIOM_ERDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseCommandResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseCommandResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BaseCommandResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/IOMER/{id}": {
+      "get": {
+        "tags": [
+          "IOMER"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/IOM_ERDTO"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/IOM_ERDTO"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/IOM_ERDTO"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "IOMER"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AuthRequest": {
+        "required": [
+          "citizenCode",
+          "password"
+        ],
+        "type": "object",
+        "properties": {
+          "citizenCode": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "password": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "AuthResponse": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "userName": {
+            "type": "string",
+            "nullable": true
+          },
+          "citizenCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "token": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "BaseCommandResponse": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "success": {
+            "type": "boolean"
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "errors": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CSB_DTO": {
+        "type": "object",
+        "properties": {
+          "radif": {
+            "type": "string",
+            "nullable": true
+          },
+          "workShopNumberInList": {
+            "type": "string",
+            "nullable": true
+          },
+          "floorCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "shahrestanName": {
+            "type": "string",
+            "nullable": true
+          },
+          "shahrName": {
+            "type": "string",
+            "nullable": true
+          },
+          "bakhsh": {
+            "type": "string",
+            "nullable": true
+          },
+          "dehestan": {
+            "type": "string",
+            "nullable": true
+          },
+          "abadi": {
+            "type": "string",
+            "nullable": true
+          },
+          "village": {
+            "type": "string",
+            "nullable": true
+          },
+          "workShopMainActivityCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "activityDescription": {
+            "type": "string",
+            "nullable": true
+          },
+          "workshopName": {
+            "type": "string",
+            "nullable": true
+          },
+          "address": {
+            "type": "string",
+            "nullable": true
+          },
+          "postalCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "telephone": {
+            "type": "string",
+            "nullable": true
+          },
+          "planCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "vahedKar": {
+            "type": "string",
+            "nullable": true
+          },
+          "source": {
+            "type": "string",
+            "nullable": true
+          },
+          "repeat": {
+            "type": "string",
+            "nullable": true
+          },
+          "agentName": {
+            "type": "string",
+            "nullable": true
+          },
+          "waysInMashhad": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CSB_ERDTO": {
+        "type": "object",
+        "properties": {
+          "reportId": {
+            "type": "string",
+            "nullable": true
+          },
+          "reportType": {
+            "type": "string",
+            "nullable": true
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "creationDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "lastModifiedDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "followUpDate": {
+            "type": "string",
+            "nullable": true
+          },
+          "followUpMethod": {
+            "type": "string",
+            "nullable": true
+          },
+          "accessWorkshop": {
+            "type": "string",
+            "nullable": true
+          },
+          "completionStatus": {
+            "type": "string",
+            "nullable": true
+          },
+          "incompletionReason": {
+            "type": "string",
+            "nullable": true
+          },
+          "inaccessibilityReason": {
+            "type": "string",
+            "nullable": true
+          },
+          "receiptDate": {
+            "type": "string",
+            "nullable": true
+          },
+          "documentType": {
+            "type": "string",
+            "nullable": true
+          },
+          "respondentFullName": {
+            "type": "string",
+            "nullable": true
+          },
+          "respondentSide": {
+            "type": "string",
+            "nullable": true
+          },
+          "respondentNumberWithCityCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "respondentMobilePhone": {
+            "type": "string",
+            "nullable": true
+          },
+          "respondentEmail": {
+            "type": "string",
+            "nullable": true
+          },
+          "respondentFax": {
+            "type": "string",
+            "nullable": true
+          },
+          "explainations": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateCSB_ERDTO": {
+        "type": "object",
+        "properties": {
+          "reportId": {
+            "type": "string",
+            "nullable": true
+          },
+          "reportType": {
+            "type": "string",
+            "nullable": true
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "creationDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "lastModifiedDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "followUpDate": {
+            "type": "string",
+            "nullable": true
+          },
+          "followUpMethod": {
+            "type": "string",
+            "nullable": true
+          },
+          "accessWorkshop": {
+            "type": "string",
+            "nullable": true
+          },
+          "completionStatus": {
+            "type": "string",
+            "nullable": true
+          },
+          "incompletionReason": {
+            "type": "string",
+            "nullable": true
+          },
+          "inaccessibilityReason": {
+            "type": "string",
+            "nullable": true
+          },
+          "receiptDate": {
+            "type": "string",
+            "nullable": true
+          },
+          "documentType": {
+            "type": "string",
+            "nullable": true
+          },
+          "respondentFullName": {
+            "type": "string",
+            "nullable": true
+          },
+          "respondentSide": {
+            "type": "string",
+            "nullable": true
+          },
+          "respondentNumberWithCityCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "respondentMobilePhone": {
+            "type": "string",
+            "nullable": true
+          },
+          "respondentEmail": {
+            "type": "string",
+            "nullable": true
+          },
+          "respondentFax": {
+            "type": "string",
+            "nullable": true
+          },
+          "explainations": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateIOM_ERDTO": {
+        "type": "object",
+        "properties": {
+          "reportId": {
+            "type": "string",
+            "nullable": true
+          },
+          "reportType": {
+            "type": "string",
+            "nullable": true
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "creationDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "lastModifiedDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "followUpDate": {
+            "type": "string",
+            "nullable": true
+          },
+          "followUpMethod": {
+            "type": "string",
+            "nullable": true
+          },
+          "accessWorkshop": {
+            "type": "string",
+            "nullable": true
+          },
+          "completionStatus": {
+            "type": "string",
+            "nullable": true
+          },
+          "incompletionReason": {
+            "type": "string",
+            "nullable": true
+          },
+          "inaccessibilityReason": {
+            "type": "string",
+            "nullable": true
+          },
+          "receiptDate": {
+            "type": "string",
+            "nullable": true
+          },
+          "documentType": {
+            "type": "string",
+            "nullable": true
+          },
+          "respondentFullName": {
+            "type": "string",
+            "nullable": true
+          },
+          "respondentSide": {
+            "type": "string",
+            "nullable": true
+          },
+          "respondentNumberWithCityCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "respondentMobilePhone": {
+            "type": "string",
+            "nullable": true
+          },
+          "respondentEmail": {
+            "type": "string",
+            "nullable": true
+          },
+          "respondentFax": {
+            "type": "string",
+            "nullable": true
+          },
+          "explainations": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "IOM_DTO": {
+        "type": "object",
+        "properties": {
+          "ostanCode": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "ostanName": {
+            "type": "string",
+            "nullable": true
+          },
+          "shahrestanCode": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "shahrestanName": {
+            "type": "string",
+            "nullable": true
+          },
+          "vahedkar": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "radif": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "frameId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "mineName": {
+            "type": "string",
+            "nullable": true
+          },
+          "actCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "isicDesc": {
+            "type": "string",
+            "nullable": true
+          },
+          "shahrdehCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "shahrName": {
+            "type": "string",
+            "nullable": true
+          },
+          "dehestanName": {
+            "type": "string",
+            "nullable": true
+          },
+          "abadi_Name": {
+            "type": "string",
+            "nullable": true
+          },
+          "postalCodeMarkazi": {
+            "type": "string",
+            "nullable": true
+          },
+          "telMarkazi1": {
+            "type": "string",
+            "nullable": true
+          },
+          "telMarkazi2": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "webSite": {
+            "type": "string",
+            "nullable": true
+          },
+          "bahrebardarName": {
+            "type": "string",
+            "nullable": true
+          },
+          "postalCodeBahrebardar": {
+            "type": "string",
+            "nullable": true
+          },
+          "telBahrebardar1": {
+            "type": "string",
+            "nullable": true
+          },
+          "telBahrebardar2": {
+            "type": "string",
+            "nullable": true
+          },
+          "bargh1": {
+            "type": "string",
+            "nullable": true
+          },
+          "bargh2": {
+            "type": "string",
+            "nullable": true
+          },
+          "bargh3": {
+            "type": "string",
+            "nullable": true
+          },
+          "masoolFaniName": {
+            "type": "string",
+            "nullable": true
+          },
+          "telMasoolFani": {
+            "type": "string",
+            "nullable": true
+          },
+          "agentName": {
+            "type": "string",
+            "nullable": true
+          },
+          "deliveryDateToAgent": {
+            "type": "string",
+            "nullable": true
+          },
+          "deliveryFromAgent": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "IOM_ERDTO": {
+        "type": "object",
+        "properties": {
+          "reportId": {
+            "type": "string",
+            "nullable": true
+          },
+          "reportType": {
+            "type": "string",
+            "nullable": true
+          },
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "creationDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "lastModifiedDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "followUpDate": {
+            "type": "string",
+            "nullable": true
+          },
+          "followUpMethod": {
+            "type": "string",
+            "nullable": true
+          },
+          "accessWorkshop": {
+            "type": "string",
+            "nullable": true
+          },
+          "completionStatus": {
+            "type": "string",
+            "nullable": true
+          },
+          "incompletionReason": {
+            "type": "string",
+            "nullable": true
+          },
+          "inaccessibilityReason": {
+            "type": "string",
+            "nullable": true
+          },
+          "receiptDate": {
+            "type": "string",
+            "nullable": true
+          },
+          "documentType": {
+            "type": "string",
+            "nullable": true
+          },
+          "respondentFullName": {
+            "type": "string",
+            "nullable": true
+          },
+          "respondentSide": {
+            "type": "string",
+            "nullable": true
+          },
+          "respondentNumberWithCityCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "respondentMobilePhone": {
+            "type": "string",
+            "nullable": true
+          },
+          "respondentEmail": {
+            "type": "string",
+            "nullable": true
+          },
+          "respondentFax": {
+            "type": "string",
+            "nullable": true
+          },
+          "explainations": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "RegistrationRequest": {
+        "type": "object",
+        "properties": {
+          "firstName": {
+            "type": "string",
+            "nullable": true
+          },
+          "lastName": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "citizenCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "role": {
+            "type": "string",
+            "nullable": true
+          },
+          "fatherName": {
+            "type": "string",
+            "nullable": true
+          },
+          "citizenIdentityCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "birthDate": {
+            "type": "string",
+            "nullable": true
+          },
+          "birthLocation": {
+            "type": "string",
+            "nullable": true
+          },
+          "mariageStatus": {
+            "type": "string",
+            "nullable": true
+          },
+          "childrens": {
+            "type": "string",
+            "nullable": true
+          },
+          "religion": {
+            "type": "string",
+            "nullable": true
+          },
+          "militaryServiceStatus": {
+            "type": "string",
+            "nullable": true
+          },
+          "educationDegree": {
+            "type": "string",
+            "nullable": true
+          },
+          "obtainingDegreeDate": {
+            "type": "string",
+            "nullable": true
+          },
+          "obtainingDegreePlace": {
+            "type": "string",
+            "nullable": true
+          },
+          "workplaceNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "homePhoneNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "mobileNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "liveCity": {
+            "type": "string",
+            "nullable": true
+          },
+          "address": {
+            "type": "string",
+            "nullable": true
+          },
+          "planName": {
+            "type": "string",
+            "nullable": true
+          },
+          "reviewerName": {
+            "type": "string",
+            "nullable": true
+          },
+          "expertName": {
+            "type": "string",
+            "nullable": true
+          },
+          "headerName": {
+            "type": "string",
+            "nullable": true
+          },
+          "password": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "RegistrationResponse": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "securitySchemes": {
+      "Bearer": {
+        "type": "apiKey",
+        "description": "JWT Authorization header using the Bearer scheme. \r\n                      Enter 'Bearer' [space] and then your token in the text input below.\r\n                      Example: 'Bearer 1234sddsw'",
+        "name": "Authorization",
+        "in": "header"
+      }
+    }
+  },
+  "security": [
+    {
+      "Bearer": [ ]
+    }
+  ]
+}
